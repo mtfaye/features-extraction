@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #343434;
+            background-color: #f5f5f5;
+        }
+
+        .content {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            background: #FFFFFF;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10);
+            box-sizing: border-box;
+            padding: 24px 24px 16px 24px;
+        }
+
+        .person {
+            color: #4c2621;
+        }
+
+        .author {
+            margin-right: 4px;
+            font-weight: 700;
+        }
+
+        .system {
+            font-weight: 400;
+            color: #a3a3a3;
+        }
+
+        .participants {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .participants span:not(:last-child):after {
+            content: ",";
+        }
+
+        .message {
+            width: 100%;
+            display: flex;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .system_message {
+            width: 100%;
+            display: flex;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #a3a3a3;
+            margin-top: 3px;
+            margin-right: 4px;
+        }
+
+        .text-container .text {
+            display: inline-flex;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 8px 16px 8px 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="participants">
+    <b>Participants:</b>
+    <span class="person">Phillip Allen</span>&nbsp;
+    <span class="person">John Lavorato</span>&nbsp;
+</div>
+
+<div class="content">
+
+    <div class="message">
+        <div class="info"><span class="person author">John Lavorato</span> <span
+                class="date">2001-05-24 11:58:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                My risk management means I move my stop to 10pips below the low of each 24 hour bar. Stop just about breaks me even at the moment and trade showing just below 1% profit. Lovely upwards trend on the chart.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-05-25 10:50:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                hi john i hope you closed your gbp/usd long with good pips all green like i did
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-05-25 10:54:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                i closed with 76pips
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-05-25 10:54:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                whats your position now
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">John Lavorato</span> <span
+                class="date">2001-05-25 12:03:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                I&#39;ve still got it open . . . locked in 26pips which is about 0.5% profit vs my risk. Looking at the RSI I&#39;d say it still had momentum.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-05-25 15:22:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                i&#39;ve taking it short 1.6853
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">John Lavorato</span> <span
+                class="date">2001-05-26 10:23:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                What made you decide to do that?
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-05-26 11:04:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                just follow and see how it will work out
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-05-26 11:04:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                so far i&#39;m painting green
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
