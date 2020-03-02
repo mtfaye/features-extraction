@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #343434;
+            background-color: #f5f5f5;
+        }
+
+        .content {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            background: #FFFFFF;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10);
+            box-sizing: border-box;
+            padding: 24px 24px 16px 24px;
+        }
+
+        .person {
+            color: #4c2621;
+        }
+
+        .author {
+            margin-right: 4px;
+            font-weight: 700;
+        }
+
+        .system {
+            font-weight: 400;
+            color: #a3a3a3;
+        }
+
+        .participants {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .participants span:not(:last-child):after {
+            content: ",";
+        }
+
+        .message {
+            width: 100%;
+            display: flex;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .system_message {
+            width: 100%;
+            display: flex;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #a3a3a3;
+            margin-top: 3px;
+            margin-right: 4px;
+        }
+
+        .text-container .text {
+            display: inline-flex;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 8px 16px 8px 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="participants">
+    <b>Participants:</b>
+    <span class="person">Phillip Allen</span>&nbsp;
+    <span class="person">John Lavorato</span>&nbsp;
+</div>
+
+<div class="content">
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2000-08-01 02:12:20 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Hello?
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">John Lavorato</span> <span
+                class="date">2000-08-01 02:12:32 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Morning
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2000-08-01 02:12:36 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Yeah, how are you?
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">John Lavorato</span> <span
+                class="date">2000-08-01 02:13:19 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                I&#39;m pretty good sir. Very Good. We&#39;re just not, we&#39;re not allowed to have those conversations on chat
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2000-08-01 02:13:30 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Oh, sorry about that. I didn&#39;t know.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">John Lavorato</span> <span
+                class="date">2000-08-01 02:13:31 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                (laughter)
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2000-08-01 02:13:32 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                (laughter) Oh because of the, the BBA thing?
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

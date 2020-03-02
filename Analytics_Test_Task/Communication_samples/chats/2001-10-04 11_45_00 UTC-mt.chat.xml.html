@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #343434;
+            background-color: #f5f5f5;
+        }
+
+        .content {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            background: #FFFFFF;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.10);
+            box-sizing: border-box;
+            padding: 24px 24px 16px 24px;
+        }
+
+        .person {
+            color: #4c2621;
+        }
+
+        .author {
+            margin-right: 4px;
+            font-weight: 700;
+        }
+
+        .system {
+            font-weight: 400;
+            color: #a3a3a3;
+        }
+
+        .participants {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .participants span:not(:last-child):after {
+            content: ",";
+        }
+
+        .message {
+            width: 100%;
+            display: flex;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .system_message {
+            width: 100%;
+            display: flex;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #a3a3a3;
+            margin-top: 3px;
+            margin-right: 4px;
+        }
+
+        .text-container .text {
+            display: inline-flex;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 8px 16px 8px 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="participants">
+    <b>Participants:</b>
+    <span class="person">Phillip Allen</span>&nbsp;
+    <span class="person">Test Maltese</span>&nbsp;
+</div>
+
+<div class="content">
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-10-04 11:45:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Tajjeb wara nofsinhar
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Test Maltese</span> <span
+                class="date">2001-10-04 11:46:40 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Hello
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-10-04 11:51:40 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Kif int?
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Test Maltese</span> <span
+                class="date">2001-10-04 11:58:20 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Kollox hu tajjeb
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-10-04 12:01:40 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Did xi ħaġa jiġri fuq il-mistoqsija tagħna?
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Test Maltese</span> <span
+                class="date">2001-10-04 12:10:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                S&#39;issa, ħafna jeħtieġ li jaqblu
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-10-04 12:11:35 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Huwa ċar
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-10-04 12:11:55 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Se nistenna għall-konferma
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Phillip Allen</span> <span
+                class="date">2001-10-04 12:12:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Adieu
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="message">
+        <div class="info"><span class="person author">Test Maltese</span> <span
+                class="date">2001-10-04 12:15:00 UTC</span>
+        </div>
+        <div class="text-container">
+            <div class="arrow"></div>
+            <div class="text">
+                Għal issa
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

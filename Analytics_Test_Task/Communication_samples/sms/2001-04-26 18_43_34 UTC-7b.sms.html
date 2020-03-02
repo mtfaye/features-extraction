@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SMS message</title>
+    <style>
+         body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #343434;
+            background-color: #f5f5f5;
+        }
+
+        .content{
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            background: #FFFFFF;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.10);
+            box-sizing: border-box;
+            padding: 24px 24px 16px 24px;
+        }
+
+        .person {
+            color: #4c2621;
+        }
+
+        .author{
+            margin-right: 4px;
+            font-weight: 700;
+        }
+
+        .participants {
+            width: 624px;
+            margin: 0 auto;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .content span:not(:last-child):after {
+            content: ",";
+        }
+
+        .message {
+            width: 100%;
+            display: flex;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            flex-direction: column;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #a3a3a3;
+            margin-top: 3px;
+            margin-right: 4px;
+        }
+        .text-container .text {
+            display: inline-flex;
+            flex-wrap: wrap;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 8px 16px 8px 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <b>Date:</b> 2001-04-26 18:43:34 UTC
+        <br/>
+        <b>From:</b> Phillip Allen [tel:+17138536162]
+        <br/>
+        <b>To:</b>
+            <span class="contact">John Lavorato [tel:+17138536161]</span>&nbsp;
+
+        <div class="message">
+            <div class="text-container">
+                <div class="text">
+                    Nevermind. Nothing is critical.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
