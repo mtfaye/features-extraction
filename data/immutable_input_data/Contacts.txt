@@ -1,0 +1,19 @@
+Name: Phillip Allen
+
+Email: phillip.allen@enron.com
+
+Chat: 297942651121681
+
+Chat: phillip.allen
+
+CustomPhone: custom;bb_contact:71385361622
+
+CustomPhone: custom;bl_username:Phillip Allen
+
+Identifier: revenue_person1
+
+Phone: tel:+17138536162
+
+PortfolioManagerId: kipu
+
+TextMagicUsername: test1
