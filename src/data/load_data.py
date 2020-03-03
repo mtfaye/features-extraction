@@ -3,8 +3,8 @@
 LOAD THE RAW DATA AND CONVERT TO DATAFRAME FORMAT
  """
 
-import re
 import os
+import re
 import sys
 import json
 import email
@@ -12,6 +12,7 @@ import mailbox
 import pandas as pd
 from time import asctime
 from dateutil.parser import parse
+from bs4 import BeautifulSoup
 
 # ############################################################ #
 # Converting the raw data folder to a standardized mbox format #
@@ -26,7 +27,7 @@ MBOX = '/Users/mouhamethtakhafaye/Desktop/behavox_assignment/data/immutable_inpu
 # Create a file handle that we'll be writing into...
 mbox = open(MBOX, 'w+')
 
-# Walk the directories and process any folder named 'inbox'
+# Walk the directories and process all folders
 for (root, dirs, file_names) in os.walk(path_file):
 
     if root.split(os.sep)[-1].lower() != 'inbox':
@@ -43,7 +44,7 @@ for (root, dirs, file_names) in os.walk(path_file):
         _date = re.search(r"Date: ([^\r\n]+)", message_text).groups()[0]
 
         # Convert _date to the asctime representation for the From_ line
-        _date = asctime(parse(_date).timetuple())
+       _date = asctime(parse(_date).timetuple())
 
         msg = email.message_from_string(message_text)
         msg.set_unixfrom('From {0} {1}'.format(_from, _date))
@@ -63,8 +64,19 @@ for i, msg in enumerate(mbox):
     mbox_dict[i] = {}
     for header in msg.keys():
         mbox_dict[i][header] = msg[header]
-    mbox_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r', ' ').strip()
+        mbox_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r', ' ').strip()
 
 df = pd.DataFrame.from_dict(mbox_dict, orient='index')
 
-df.to_pickle('01_raw.pkl')
+
+# ############################################################ #
+#      Loading the sms folder                                  #
+# ############################################################ #
+sms_file = '/Users/mouhamethtakhafaye/Desktop/behavox_assignment/data/immutable_input_data/Communication_samples/sms'
+for filename in os.listdir(p):
+    if filename.endswith('.html'):
+        fname = os.path.join(sms_file,filename)
+        with open(fname, 'r') as f:
+            soup = BeautifulSoup(f.read(),'html.parser')
+            ''.join(soup.findAll(text=True))
+
