@@ -3,10 +3,6 @@
 LOAD THE RAW DATA AND CONVERT TO DATAFRAME FORMAT
  """
 
-# ############################################################ #
-# Converting the raw data folder to a standardized mbox format #
-# ############################################################ #
-
 import re
 import os
 import sys
@@ -16,6 +12,10 @@ import mailbox
 import pandas as pd
 from time import asctime
 from dateutil.parser import parse
+
+# ############################################################ #
+# Converting the raw data folder to a standardized mbox format #
+# ############################################################ #
 
 # path file data
 path_file= '/Users/mouhamethtakhafaye/Desktop/behavox_assignment/data/immutable_input_data'
@@ -67,4 +67,4 @@ for i, msg in enumerate(mbox):
 
 df = pd.DataFrame.from_dict(mbox_dict, orient='index')
 
-df.to_pickle('01_raw.pkl', path="/Users/mouhamethtakhafaye/Desktop/behavox_assignment/data/")
+df.to_pickle('01_raw.pkl')
