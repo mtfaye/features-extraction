@@ -1,6 +1,7 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Web App that count important features across different channel of communication
+by Mouhameth T. Faye
 
 ### What is this repository for? ###
 
