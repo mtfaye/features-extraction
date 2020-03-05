@@ -1,13 +1,10 @@
-
 """
 LOAD THE RAW DATA AND CONVERT TO DATAFRAME FORMAT
 
  """
 import os
 import re
-import json
 import email
-import pickle
 import mailbox
 import pandas as pd
 from time import asctime
@@ -47,57 +44,60 @@ for (root, dirs, file_names) in os.walk(path_file):
 
 mbox.close()
 
-
 # ############################################################ #
 #      Loading emails (Inbox folder only) data                 #
 # ############################################################ #
 
-mbox = mailbox.mbox(MBOX)
+emails_folder = mailbox.mbox(MBOX)
 
-def load_emails(mbox):
 
-    mbox_dict = {}
-    for i, msg in enumerate(mbox):
-        mbox_dict[i] = {}
+def load_emails(emails_folder):
+    emails_dict = {}
+
+    for i, msg in enumerate(emails_folder):
+        emails_dict[i] = {}
         for header in msg.keys():
-            mbox_dict[i][header] = msg[header]
-            mbox_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r', ' ').strip()
+            emails_dict[i][header] = msg[header]
+            emails_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r', ' ').strip()
 
-    data_emails = pd.DataFrame.from_dict(mbox_dict, orient='index')
-    return data_emails
+    emails_df = pd.DataFrame.from_dict(emails_dict, orient='index')
+
+    return emails_df
 
 
 # ############################################################ #
-#      Loading the sms data                                    #
+#               Loading the sms data                           #
 # ############################################################ #
 
 def load_sms(sms_folder):
+    data_sms = []
 
     for filename in os.listdir(sms_folder):
         if filename.endswith('.html'):
             fname = os.path.join(sms_folder, filename)
             with open(fname, 'r') as f:
-
                 soup = BeautifulSoup(open(fname), "html.parser")
-                sms = [p.text for p in soup.findAll("div", class_="text")]
+                sms = [k.text for k in soup.findAll("div", class_="text")]
+                data_sms.append(sms)
+                sms_df = pd.DataFrame(list(zip(data_sms)), columns=["SMS"])
 
-                data_sms = json.dumps(sms, indent=4)
-                return data_sms
+    return sms_df
 
 
 # ############################################################ #
-#      Loading the chats data                                  #
+#                Loading the chats data                        #
 # ############################################################ #
 
 def load_chats(chats_folder):
+    data_chats = []
 
     for filenames in os.listdir(chats_folder):
         if filenames.endswith('.xml.html'):
             f_name = os.path.join(chats_folder, filenames)
             with open(f_name, 'r') as f:
-
                 makesoup = BeautifulSoup(open(f_name), "html.parser")
-                chats = [i.text for i in makesoup.findAll("div", class_="text")]
+                chats = [p.text for p in makesoup.findAll("div", class_="text")]
+                data_chats.append(chats)
+                chats_df = pd.DataFrame(list(zip(data_chats)), columns=["CHATS"])
 
-                data_chats = json.dumps(chats, indent=4)
-                return data_chats
+    return chats_df
