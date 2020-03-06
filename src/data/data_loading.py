@@ -1,9 +1,10 @@
 """
-LOAD THE RAW DATA AND CONVERT TO DATAFRAME FORMAT
+LOAD THE RAW DATA AND CONVERT TO A LIST OF TEXT
 
  """
 import os
 import re
+import json
 import email
 import mailbox
 import pandas as pd
@@ -11,7 +12,7 @@ from time import asctime
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 
-from data.directory_root import path_file, MBOX, sms_folder, chats_folder
+from data.root import communications_samples, MBOX, sms_folder, chats_folder
 
 # Converting the raw data folder to a standardized mbox format
 
@@ -19,7 +20,7 @@ from data.directory_root import path_file, MBOX, sms_folder, chats_folder
 mbox = open(MBOX, 'w+')
 
 # Walk the directories and process all folders
-for (root, dirs, file_names) in os.walk(path_file):
+for (root, dirs, file_names) in os.walk(communications_samples):
 
     if root.split(os.sep)[-1].lower() != 'inbox':
         continue
@@ -58,11 +59,12 @@ def load_emails(emails_folder):
         emails_dict[i] = {}
         for header in msg.keys():
             emails_dict[i][header] = msg[header]
-            emails_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r', ' ').strip()
+            emails_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r',' ').strip()
 
-    emails_df = pd.DataFrame.from_dict(emails_dict, orient='index')
+    data = pd.DataFrame.from_dict(emails_dict, orient='index')
+    list_emails = data.Body.tolist()
 
-    return emails_df
+    return list_emails
 
 
 # ############################################################ #
@@ -79,9 +81,11 @@ def load_sms(sms_folder):
                 soup = BeautifulSoup(open(fname), "html.parser")
                 sms = [k.text for k in soup.findAll("div", class_="text")]
                 data_sms.append(sms)
-                sms_df = pd.DataFrame(list(zip(data_sms)), columns=["SMS"])
+                list_sms = []
+                for items in data_sms:
+                    list_sms.extend(items)
 
-    return sms_df
+    return list_sms
 
 
 # ############################################################ #
@@ -98,6 +102,8 @@ def load_chats(chats_folder):
                 makesoup = BeautifulSoup(open(f_name), "html.parser")
                 chats = [p.text for p in makesoup.findAll("div", class_="text")]
                 data_chats.append(chats)
-                chats_df = pd.DataFrame(list(zip(data_chats)), columns=["CHATS"])
+                list_chats = []
+                for item in data_chats:
+                    list_chats.extend(item)
 
-    return chats_df
+    return list_chats
