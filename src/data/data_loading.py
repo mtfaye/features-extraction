@@ -1,5 +1,5 @@
 """
-LOAD THE RAW DATA AND CONVERT TO A LIST OF TEXT
+SCRAPE MESSAGES FROM FILES (sms, chats and emails(Inbox)) AND CONVERT TO A LIST OF TEXT.
 
  """
 import os
@@ -14,7 +14,7 @@ from dateutil.parser import parse
 
 from data.root import communications_samples, MBOX, sms_folder, chats_folder
 
-# Converting the raw data folder to a standardized mbox format
+# Converting the raw data folder to a standardized mbox format.
 
 # Create a file handle that we'll be writing into...
 mbox = open(MBOX, 'w+')
@@ -25,17 +25,17 @@ for (root, dirs, file_names) in os.walk(communications_samples):
     if root.split(os.sep)[-1].lower() != 'inbox':
         continue
 
-    # Process each message in 'inbox'
+    # Process each message in 'inbox'.
 
     for file_name in file_names:
         file_path = os.path.join(root, file_name)
         message_text = open(file_path, errors='ignore').read()
 
-        # Compute fields for the From_ line in a traditional mbox message
+        # Compute fields for the From_ line in a traditional mbox message.
         _from = re.search(r"From: ([^\r\n]+)", message_text).groups()[0]
         _date = re.search(r"Date: ([^\r\n]+)", message_text).groups()[0]
 
-        # Convert _date to the asctime representation for the From_ line
+        # Convert _date to the asctime representation for the From_ line.
         _date = asctime(parse(_date).timetuple())
 
         msg = email.message_from_string(message_text)
