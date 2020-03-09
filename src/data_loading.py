@@ -2,7 +2,7 @@
 SCRAPE MESSAGES FROM FILES (sms, chats and emails(Inbox)) AND CONVERT TO A LIST OF TEXT.
 
  """
-import communications_samples, MBOX, sms_folder, chats_folder
+from root import communications_samples, MBOX, sms_folder, chats_folder
 
 import os
 import re
@@ -53,7 +53,7 @@ mbox.close()
 emails_folder = mailbox.mbox(MBOX)
 
 
-def load_emails(emails_folder):
+def __load_emails__(emails_folder):
     emails_dict = {}
 
     for i, msg in enumerate(emails_folder):
@@ -72,7 +72,7 @@ def load_emails(emails_folder):
 #               Loading the sms data                           #
 # ############################################################ #
 
-def load_sms(sms_folder):
+def __load_sms__(sms_folder):
     data_sms = []
 
     for filename in os.listdir(sms_folder):
@@ -93,7 +93,7 @@ def load_sms(sms_folder):
 #                Loading the chats data                        #
 # ############################################################ #
 
-def load_chats(chats_folder):
+def __load_chats__(chats_folder):
     data_chats = []
 
     for filenames in os.listdir(chats_folder):

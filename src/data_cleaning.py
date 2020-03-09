@@ -25,7 +25,7 @@ text_processed = load(raw)
 
 
 
-def cleaning(text):
+def clean(text):
     # 3 rounds of cleaning- see notebooks for more details on my approach
 
     text = text.lower()
@@ -43,7 +43,7 @@ def cleaning(text):
 
 
 # Remove square brackets
-rounds_of_cleaning = lambda x: cleaning(x)
+rounds_of_cleaning = lambda x: clean(x)
 clean_corpus = pd.DataFrame(text_processed.Messages.apply(rounds_of_cleaning))
 
 # Remove top words for all languages supported by nltk

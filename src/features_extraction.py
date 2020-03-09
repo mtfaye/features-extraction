@@ -45,13 +45,15 @@ def extract_features(ngram_range, min_df, max_df, max_features):
         unigrams = [v for v in feature_names if len(v.split(' ')) == 1]
         bigrams = [v for v in feature_names if len(v.split(' ')) == 2]
 
-        return [
-            print("# '{}' channel:".format(wrd)),
-            print("  . Most correlated unigrams:\n. {}".format('\n. '.join(unigrams[-6:]))),
-            print("  . Most correlated bigrams:\n. {}".format('\n. '.join(bigrams[-6:]))),
-            print("")
 
-        ]
 
+
+       # return [
+       #     print("# '{}' channel:".format(wrd)),
+       #     print("  . Most correlated unigrams:\n. {}".format('\n. '.join(unigrams[-6:]))),
+       #    print("  . Most correlated bigrams:\n. {}".format('\n. '.join(bigrams[-6:]))),
+         #   print("")
+
+        #]
 
 extract_features(ngram_range, min_df, max_df, max_features)
