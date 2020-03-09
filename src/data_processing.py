@@ -7,6 +7,7 @@ from root import *
 from data_loading import sms_folder, chats_folder, emails_folder, __load_emails__, __load_chats__, __load_sms__
 
 
+
 def combine(list_of_text):
     # Takes a list of text and combines them into one large chunk of text.
 

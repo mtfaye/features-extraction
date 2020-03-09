@@ -36,17 +36,16 @@ def clean(text):
     text = re.sub('\n', '', text)
 
     # Copied as much as possible some chinese and hindu characters from the dataset because they are not supported by
-    # the tools
+    # the ntkl libraries
     text = re.sub('是东亚地区统一的一党主权国家门特别行政区照总面积计算現在裤脚許多人需要同意還沒有重庆鞋子全部打湿完了我會等待確認裤脚鞋子全部打湿完了こんにちはこれは日本語の例です', '',
                   text)
     return text
 
 
-# Remove square brackets
 rounds_of_cleaning = lambda x: clean(x)
 clean_corpus = pd.DataFrame(text_processed.Messages.apply(rounds_of_cleaning))
 
-# Remove top words for all languages supported by nltk
+# Remove top words for all the supported languages
 stop_words = list(stopwords.words())
 
 for stop_word in stop_words:
