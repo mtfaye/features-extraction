@@ -1,7 +1,5 @@
-# macOS Files
 .DS_Store
-
-# environment
 venv/
+idea/
 
 
