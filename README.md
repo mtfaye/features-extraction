@@ -28,19 +28,19 @@ This is achieved with a statistical modeling technique that is able to convert t
 
 > #### Follow these 6 steps from your terminal.
 > 
-> 1.  	git clone https://bitbucket.org/mtfaye/behavox_assignment.git
-> 2.  	cd ../behavox_assignment
-> 3.  	cd ../behavox_assignment/src
-> 4.  	source venv/bin/activate
-> 5.  	pip install -r requirements.txt
-> 6.  	python app.py 
+>1.    	<git clone https://bitbucket.org/mtfaye/behavox_assignment.git>
+>2.   	<cd ../behavox_assignment>
+>3.   	<cd ../behavox_assignment/src>
+>4.   	<source venv/bin/activate>
+>5.   	<pip install -r requirements.txt>
+>6.   	<python app.py>
 
 >	    Enjoy!!!
 
 
 ### Contribution guidelines ###
 
->  		Make tests
+>  Make tests
 
 
 ### Who do I talk to? ###
