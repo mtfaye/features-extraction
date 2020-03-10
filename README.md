@@ -2,8 +2,7 @@
 
 
 
-https://bitbucket.org/mtfaye/behavox_assignment/raw/6b0b66409020b21575b5efa21a1286535a2ca52d/Screen%20Shot%202020-03-10%20at%205.11.44%20AM.png
-
+[Your Link Text](https://bitbucket.org/mtfaye/behavox_assignment/src/master/Screen%20Shot%202020-03-10%20at%205.11.44%20AM.png)
 
 
 
@@ -57,7 +56,15 @@ Used the analytic web framework Dash to build the web app that showcases the res
 
 ###### FIRST AND FOREMOST: 
 
-Once you have access to the repository make sure to first open > __PATH_FILES__.py  located inside the ..src/ subdirectory, and replace accordingly the absolute paths of your local directories. 
+Once you have access to the repository make sure to first open: 
+
+> __PATH_FILES__.py  
+
+located inside:
+
+> ../behavox_assignment/src
+
+then replace accordingly the absolute paths of your local directories. 
 
 
 
