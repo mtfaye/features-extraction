@@ -11,27 +11,26 @@ go# README #
 * models - Saved models and weights
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
+
 ### Run the app ###
 
-- Follow these steps from your terminal
-
-git clone https://bitbucket.org/mtfaye/behavox_assignment.git
-cd ../behavox_assignment
-cd ../behavox_assignment/src
-source venv/bin/activate
-pip install -r requirements.txt
-python3 app.py to run the app
-
-Enjoy!!!
-
-
+> ## Follow these steps from your terminal.
+> 
+> 1.   git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+> 2.   cd ../behavox_assignment
+> 3.   cd ../behavox_assignment/src
+> 3.   source venv/bin/activate
+> 4.   pip install -r requirements.txt
+> 5.   python3 app.py 
+> 6.   python app.py or python3 app.py 
+>
+>  Enjoy!!!
 
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+> Make tests
+
 
 ### Who do I talk to? ###
 
