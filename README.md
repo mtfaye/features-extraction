@@ -2,6 +2,10 @@
 
 
 
+[Your Link Text](https://bitbucket.org/mtfaye/behavox_assignment/src/master/Screen%20Shot%202020-03-10%20at%205.11.44%20AM.png)
+
+
+
 This project is intended to be a walkthrough on the development of a machine learning project from end to end. It covers the creation of a tool (web application) that gathers data from several channel of communications such as emails, chats and text messages and shows a summary of interesting topics that are being treated across those different channels.
 
 This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document. Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples data. That should be necessary for reaching a full understanding of the project.
@@ -48,6 +52,21 @@ Used the analytic web framework Dash to build the web app that showcases the res
 ## Run the app 
 
 ###### Follow these 6 steps from your terminal.
+
+
+###### FIRST AND FOREMOST: 
+
+Once you have access to the repository make sure to first open: 
+
+> __PATH_FILES__.py  
+
+located inside:
+
+> ../behavox_assignment/src
+
+then replace accordingly the absolute paths of your local directories. 
+
+
 
      	1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
 		
