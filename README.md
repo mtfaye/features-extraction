@@ -46,7 +46,7 @@ Used the analytic web framework Dash to build the web app that showcases the res
 
 ## Run the app 
 
-###### Follow these 6 steps from your terminal.
+
 
 
 ###### FIRST AND FOREMOST: 
@@ -62,6 +62,9 @@ located inside:
 
 then replace accordingly the absolute paths of your local directories. 
 
+
+
+###### Follow these 6 steps from your terminal.
 
 
 
@@ -82,4 +85,4 @@ Enjoy!
 
 ## Who do I talk to? ###
 
-* @author: Mouhameth T. Faye
+* @author: Mouhameth T. Faye - tahafaye@hotmail.com
