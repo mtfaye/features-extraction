@@ -13,12 +13,19 @@ go# README #
 
 ### Run the app ###
 
-* Clone the repo 
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+- Follow these steps from your terminal
+
+git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+cd ../behavox_assignment
+cd ../behavox_assignment/src
+source venv/bin/activate
+pip install -r requirements.txt
+python3 app.py to run the app
+
+Enjoy!!!
+
+
+
 
 ### Contribution guidelines ###
 
