@@ -16,26 +16,30 @@ This is achieved with a statistical modeling technique that is able to convert t
 
 ### Repo content ###
 
-> 1.	 src - All the excutable source codes including the app.py file and the requirements.txt file.
-> 2.	 notebooks - The Ipyhton Notebooks for exploratory analysis and algorithms designing process.
-> 3.	 data - Serialized data.
-> 4.	 tests - Empty for now but should contains the test files.
-> 5.	 models - Saved models and weights
-> [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+1.	 src - All the excutable source codes including the app.py file and the requirements.txt file.
+2.	 notebooks - The Ipyhton Notebooks for exploratory analysis and algorithms designing process.
+3.	 data - Serialized data.
+4.	 tests - Empty for now but should contains the test files.
+5.	 models - Saved models and weights
+
 
 
 ### Run the app ###
 
 > #### Follow these 6 steps from your terminal.
-> 
-<pre> 1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
-	  2. cd ../behavox_assignment>
-	  3. cd ../behavox_assignment/src>
-	  4. source venv/bin/activate>
-	  5. pip install -r requirements.txt>
-	  6. python app.py</pre>
 
-	    Enjoy!!!
+     	1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+		
+	    2. cd ../behavox_assignment>
+		
+	    3. cd ../behavox_assignment/src/
+		
+	    4. source venv/bin/activate
+		
+	    5. pip install -r requirements.txt
+		
+	    6. python app.py
+		
 
 
 ### Contribution guidelines ###
