@@ -43,8 +43,6 @@ Used the analytic web framework Dash to build the web app that showcases the res
 		
 *	 data - Serialized data.
 		
-*	 tests - Empty for now but should contains the test files.
-		
 *	 models - Saved models and will contains weights of an eventual machine learning algorithm.
 
 
@@ -58,13 +56,15 @@ Used the analytic web framework Dash to build the web app that showcases the res
 
 Once you have access to the repository make sure to first open: 
 
-> __PATH_FILES__.py  
+	 __PATH_FILES__.py  
 
 located inside:
 
-> ../behavox_assignment/src
+	 ../behavox_assignment/src
+	 
 
 then replace accordingly the absolute paths of your local directories. 
+
 
 
 
