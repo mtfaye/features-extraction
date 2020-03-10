@@ -1,95 +1,68 @@
-from root import *
-
 import pickle
-import numpy as np
 import pandas as pd
-from sklearn.feature_selection import chi2
-from sklearn.feature_extraction.text import TfidfVectorizer
+from __PATH_FILES__ import *
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
-
+# load saved corpus - see path on __PATH_FILES__
 with open(Pickles + '/clean_corpus.pickle', 'rb') as data:
     clean_corpus = pickle.load(data)
 df = clean_corpus.reset_index().rename(columns={'index': 'Channel'})
 
 channel_code = {'SMS': 1, 'EMAILS': 2, 'CHATS': 3}
 
-# Communication Channel mapping
+# Channel mapping
 df['Channel_code'] = df['Channel']
 df = df.replace({'Channel_code': channel_code})
 corpus = df.drop('Channel', axis=1).copy()
 
-# Parameter selection We have chosen different values as a first approximation and these are the ones that yield the
-# most meaningful features
 
-ngram_range = (1, 2)
-min_df = 1
-max_df = 7
-user_input = 200
+def extract_features():
+    count_vec = CountVectorizer(stop_words=None,
+                                analyzer='word',
+                                ngram_range=(3, 3),
+                                max_df=0.8,
+                                min_df=0.3,
+                                token_pattern=r"(?u)\b\w+\b",
+                                max_features=None)
 
+    dt_mat = count_vec.fit_transform(corpus.Messages)
 
-def __feats__(ngram_range,min_df, max_df, user_input ):
-
-
-    tfidf = TfidfVectorizer(encoding='utf-8',
-                            ngram_range=ngram_range,
-                            stop_words=None,
-                            lowercase=False,
-                            max_df=max_df,
-                            min_df=min_df,
-                            max_features=user_input,
-                            norm='l2',
-                            sublinear_tf=True)
-
-    features = tfidf.fit_transform(corpus.Messages)
-    labels = corpus.Channel_code
-
-    for wrd, channel_id in sorted(channel_code.items()):
-        features_chi2 = chi2(features, labels == channel_id)
-        indices = np.argsort(features_chi2[0])
-        feature_names = np.array(tfidf.get_feature_names())[indices]
-        unigrams = [v for v in feature_names if len(v.split(' ')) == 1]
-        bigrams = [v for v in feature_names if len(v.split(' ')) == 2]
-
-        _list = []
-        for k, in bigrams:
-            bigrams.append(_list)
-
-        _l =[]
-        for z in wrd:
-            wrd.append(_l)
+    tfidf_transformer = TfidfTransformer()
+    tfidf_mat = tfidf_transformer.fit_transform(dt_mat)
 
 
+    # Convert sparse matrix to a dense representation and wrap it in a dataFrame
+    trigrams = pd.DataFrame(dt_mat.todense(),
+                            index=corpus.index,
+                            columns=count_vec.get_feature_names())
+    trigrams['channel_code'] = df.Channel_code
+
+    trigrams_long = (pd.melt(trigrams.reset_index(),
+                             id_vars=['index',
+                                      'channel_code'],
+                             value_name='count').query('count > 0').sort_values(['index', 'channel_code']))
+
+    # Repeat for tfdif
+    tfidf = pd.DataFrame(tfidf_mat.todense(),
+                         index=df.index,
+                         columns=count_vec.get_feature_names())
+    tfidf['channel_code'] = df.Channel_code
+
+    tfidf_long = pd.melt(tfidf.reset_index(),
+                         id_vars=['index', 'channel_code'],
+                         value_name='score').query('score > 0')
 
 
-    return [print("# '{}' channel:".format(_l)),
-        print("  . Most correlated bigrams:\n. {}".format('\n. '.join(_list[-6:])))]
+    # Merge bigrams and tfidf
+    fulldf = (trigrams_long.merge(tfidf_long, on=['index', 'channel_code', 'variable']).set_index('index'))
 
 
+    # Filter the 20 highest scores for each channel
+    result = fulldf.groupby('channel_code').apply(lambda x: x.nlargest(15, 'count')).reset_index(drop=True)
+    result = result.applymap(str)
 
 
-__feats__(ngram_range,min_df, max_df, user_input)
+    return result
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(extract_features())

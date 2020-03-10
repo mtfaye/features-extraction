@@ -1,12 +1,10 @@
-from root import *
+from __PATH_FILES__ import *
 
 import re
 import json
 import string
 import pandas as pd
 from nltk.corpus import stopwords
-
-
 
 
 def load(input_data):

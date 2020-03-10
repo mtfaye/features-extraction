@@ -1,13 +1,27 @@
 import dash
+import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 
-from features_extraction import *
+from features_extraction import extract_features
+
+
+def generate_table(dataframe):
+    return html.Table(
+        # Header
+        [html.Tr([html.Th(col) for col in dataframe.columns])] +
+
+        # Body
+        [html.Tr([
+            html.Td(dataframe.iloc[i][col]) for col in dataframe.columns
+        ]) for i in range(len(dataframe))]
+    )
+
 
 app = dash.Dash(__name__)
 app.config['suppress_callback_exceptions'] = True
-app.title = 'Features Extraction NLP'
+app.title = 'NLP Application'
 app.colors = {'background': '#5F5958'}
 
 # Boostrap CSS
@@ -18,98 +32,66 @@ app.layout = html.Div(
     [
         html.Div(
             [
-                html.Div(
-                    [
-                        html.H1(children='Topic Modeling App',
-                                style={'color': 'white', 'fontSize': 23, 'text-indent': 10, 'line-height': 50},
-                                className='banner'
-                                )
-                    ], className="row"
-                ),
-
-                html.Div(children="""This application scrappes text data accross different channel of communication 
-                such as emails, text messages and chats and convert into a numeric feature vector with *TF-IDF 
-                vectorization* in order to extract meaningful topics. 
-
-                You can play with the parameters to extract more interesting features.
-                """
-                         , style={
-                        'textAlign': 'center'
-
-                    }),
-                html.Div(children=[
-                    html.H3(children='Extract features from Emails, Chats and SMS files'),
-
-                    html.Div([
-                        html.H5("TF-IFD Parameter"),
-                        dcc.Input(
-                            id='input-x',
-                            placeholder='Max features',
-                            type='number',
-                            value='',
-                        ),
-
-                        html.Div(
-                            html.Div(id='result')
+                html.H1(children='features extraction app',
+                        style={'color': 'white', 'fontSize': 23, 'text-indent': 10, 'line-height': 50},
+                        className='banner'
                         )
-                    ])
+            ], className="row"
+        ),
 
-                ])
-            ]),
-        html.Div(
-            [
-                html.P('Developed by Mouhameth T. Faye ',
-                       style={'display': 'inline'}
-                       ),
-                html.A('tahafaye@hotmail.com',
-                       href='mailto: tahafaye@hotmail.com'
-                       )
-            ], className="twelve columns",
-            style={'fontSize': 13, 'padding-top': 18}
-        )
-    ], className="row"
+        html.Div([
+            html.Div(html.H5(
+                children=""" About: """
+            )
+                , style={'textAlign': 'left'}),
+            html.P(
 
+                """This application extracts text across three different channels of communication; emails, 
+                sms and chats. It then performs a statistical modeling technique to find interesting subject. The 
+                table below shows the result. It contains the 15 most important features for each channel. At this 
+                point it becomes our job as a human to interpret the result and after looking at the scores for 
+                each channel, I think these features convey a collusive behavior from the user. What is your thought? 
+                """
+            )
+
+        ]),
+
+        html.Div(children=[
+            html.P('Select a channel - sms: 1, emails: 2, chats: 3'),
+            html.Div(
+                [
+                    dcc.Dropdown(id='dropdown', options=[
+                        {'label': i, 'value': i} for i in extract_features().channel_code.unique()
+                    ], multi=True, placeholder='Filter by channel...'),
+
+                    html.Div(id='output_div')
+                ], className="row"),
+            html.Div(
+                [
+                    dash_table.DataTable(id='table', columns=[])
+                ], className="ten columns"),
+
+            html.Div(
+                [
+                    html.P('Behavox assignment - Developed by Mouhameth T. Faye ', style={'display': 'inline'}),
+                    html.A('tahafaye@hotmail.com', href='mailto: tahafaye@hotmail.com')
+                ], className="twelve columns",
+                style={'fontSize': 13, 'padding-top': 18}
+            )
+        ], className="row")
+    ], className='ten columns offset-by-one'
 )
 
 
 @app.callback(
-    Output('result', 'children'),
-    [Input('input-x', 'value')]
-)
-def update_result(user_input):
-    ngram_range = (1, 2)
-    min_df = 1
-    max_df = 7
-    user_input = user_input
+    Output('output_div', 'children'),
+    [Input('dropdown', 'value')])
+def display_table(selector):
+    if selector is None:
+        return generate_table(extract_features())
 
-    tfidf = TfidfVectorizer(encoding='utf-8',
-                            ngram_range=ngram_range,
-                            stop_words=None,
-                            lowercase=False,
-                            max_df=max_df,
-                            min_df=min_df,
-                            max_features=user_input,
-                            norm='l2',
-                            sublinear_tf=True)
-
-    features = tfidf.fit_transform(corpus.Messages)
-    labels = corpus.Channel_code
-
-    for wrd, channel_id in sorted(channel_code.items()):
-        features_chi2 = chi2(features, labels == channel_id)
-        indices = np.argsort(features_chi2[0])
-        feature_names = np.array(tfidf.get_feature_names())[indices]
-        unigrams = [v for v in feature_names if len(v.split(' ')) == 1]
-        bigrams = [v for v in feature_names if len(v.split(' ')) == 2]
-
-    return [
-
-        "# '{}' channel:".format(wrd),
-        "  . Most correlated unigrams:\n. {}".format('\n. '.join(unigrams[-3:])),
-        "  . Most correlated bigrams:\n. {}".format('\n. '.join(bigrams[-6:])),
-        ""
-
-    ]
+    dff = extract_features()[extract_features().channel_code.str.contains('|'.join(selector))]
+    return generate_table(dff)
 
 
 if __name__ == '__main__':

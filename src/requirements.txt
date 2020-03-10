@@ -9,8 +9,11 @@ dash-core-components==1.8.1
 dash-html-components==1.0.2
 dash-renderer==1.2.4
 dash-table==4.6.1
+dash-table-experiments==0.6.0
+dcc==0.1.0
 decorator==4.4.2
 defusedxml==0.6.0
+dt==0.2
 entrypoints==0.3
 Flask==1.1.1
 Flask-Compress==1.4.0

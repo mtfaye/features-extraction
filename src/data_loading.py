@@ -1,8 +1,8 @@
 """
-SCRAPE MESSAGES FROM FILES (sms, chats and emails(Inbox)) AND CONVERT TO A LIST OF TEXT.
+SCRAPE TEXTS DATA FROM FILES.
 
  """
-from root import communications_samples, MBOX, sms_folder, chats_folder
+from __PATH_FILES__ import communications_samples, MBOX, sms_folder, chats_folder
 
 import os
 import re
@@ -14,14 +14,14 @@ from time import asctime
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 
-
-
-# Converting the raw data folder to a standardized mbox format.
+# First we are going to convert the raw data folder named Communication Samples to a standardized mbox file format. T
+# The MBOX is a file extension that makes it easy to manipulate eml files.
 
 # Create a file handle that we'll be writing into...
 mbox = open(MBOX, 'w+')
 
 # Walk the directories and process all folders
+
 for (root, dirs, file_names) in os.walk(communications_samples):
 
     if root.split(os.sep)[-1].lower() != 'inbox':
@@ -47,10 +47,7 @@ for (root, dirs, file_names) in os.walk(communications_samples):
 
 mbox.close()
 
-# ############################################################ #
-#      Loading emails (Inbox folder only) data                 #
-# ############################################################ #
-
+# Loading emails (Inbox folder only)
 emails_folder = mailbox.mbox(MBOX)
 
 
@@ -61,7 +58,7 @@ def __load_emails__(emails_folder):
         emails_dict[i] = {}
         for header in msg.keys():
             emails_dict[i][header] = msg[header]
-            emails_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r',' ').strip()
+            emails_dict[i]['Body'] = msg.get_payload().replace('\n', ' ').replace('\t', ' ').replace('\r', ' ').strip()
 
     data = pd.DataFrame.from_dict(emails_dict, orient='index')
     list_emails = data.Body.tolist()
@@ -69,9 +66,7 @@ def __load_emails__(emails_folder):
     return list_emails
 
 
-# ############################################################ #
-#               Loading the sms data                           #
-# ############################################################ #
+# Loading the sms data
 
 def __load_sms__(sms_folder):
     data_sms = []
@@ -90,9 +85,7 @@ def __load_sms__(sms_folder):
     return list_sms
 
 
-# ############################################################ #
-#                Loading the chats data                        #
-# ############################################################ #
+# Loading the chats data
 
 def __load_chats__(chats_folder):
     data_chats = []
@@ -109,4 +102,3 @@ def __load_chats__(chats_folder):
                     list_chats.extend(item)
 
     return list_chats
-
