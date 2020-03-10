@@ -57,7 +57,7 @@ Once you have access to the repository make sure to first open:
 
 located inside:
 
-	 ../behavox_assignment/src
+	 ../behavox_assignment/src/
 	 
 
 then replace accordingly the absolute paths of your local directories. 
