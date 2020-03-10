@@ -70,15 +70,15 @@ then replace accordingly the absolute paths of your local directories.
 
      	1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
 		
-	    2. cd ../behavox_assignment/
+	    2. cd ../behavox_assignment/src/
 		
-	    3. cd ../behavox_assignment/src/
+		3. virtualenv venv
 		
 	    4. source venv/bin/activate
 		
 	    5. pip install -r requirements.txt
 		
-	    6. python app.py
+	    6. python3 app.py
 
 Enjoy!
 
