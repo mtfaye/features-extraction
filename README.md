@@ -64,7 +64,7 @@ then replace accordingly the absolute paths of your local directories.
 
 
 
-###### Follow these 6 steps from your terminal.
+###### Follow these 6 steps from your terminal to run the app now.
 
 
 
