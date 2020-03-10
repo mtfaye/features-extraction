@@ -70,7 +70,7 @@ then replace accordingly the absolute paths of your local directories.
 
      	1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
 		
-	    2. cd ../behavox_assignment
+	    2. cd ../behavox_assignment/
 		
 	    3. cd ../behavox_assignment/src/
 		
