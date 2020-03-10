@@ -2,9 +2,6 @@
 
 
 
-[Your Link Text](https://bitbucket.org/mtfaye/behavox_assignment/src/master/Screen%20Shot%202020-03-10%20at%205.11.44%20AM.png)
-
-
 
 This project is intended to be a walkthrough on the development of a machine learning project from end to end. It covers the creation of a tool (web application) that gathers data from several channel of communications such as emails, chats and text messages and shows a summary of interesting topics that are being treated across those different channels.
 
