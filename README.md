@@ -1,19 +1,19 @@
-# README #
+go# README #
 
 
 
 ### Repo content ###
 
-* src - All the excutable source codes including the app.py file and requirements.txt
-* notebooks - Notebook for exploratory analysis and model designing
-* data - Dataset and saved serialized data from the analysis
-* tests - Empty for now, but should contains the test files
+* src - All the excutable source codes including the app.py file and requirements.txt file.
+* notebooks - Notebooks for exploratory analysis and algorithms designing.
+* data - Serialized data from the analysis.
+* tests - Empty for now but should contains the test files.
 * models - Saved models and weights
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### Run the app ###
 
-* Summary of set up
+* Clone the repo 
 * Configuration
 * Dependencies
 * Database configuration
