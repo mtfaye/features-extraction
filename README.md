@@ -8,7 +8,7 @@ This project is intended to be a walkthrough on the development of a machine lea
 This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document. Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples data. That should be necessary for reaching a full understanding of the project.
 
 
-## Workflow:
+## Workflow
 
 
 #### 	1. Dataset Collection:
@@ -32,53 +32,92 @@ Used the analytic web framework Dash to build the web app that showcases the res
 
 
 
+
 ## Repo content 
+
+				├── README.md
+				├── data
+				│   ├── immutable_input_data.mbox
+				│   ├── raw.json
+				│   ├── raw_corpus.json
+				│   ├── raw_data.json
+				│   └── term_matrix.json
+				├── models
+				│   └── tfidf.pickles
+				├── notebooks
+				│   ├── 1.0-mtf-text_cleaning.ipynb
+				│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
+				│   ├── 1.2-mtf-features_engineering.ipynb
+				│   ├── 1.3-mtf-features_analysis.ipynb
+				│   ├── Pickles
+				│   │   ├── clean_corpus.pickle
+				│   │   ├── df.pickle
+				│   │   ├── raw_corpus.pickle
+				│   │   └── term_matrix.pickle
+				│   └── lda_model.log
+				├── screenshot_webApp.png
+				├── src
+				│   ├──__PATH_FILES__.py
+				│   ├──__init__.py
+				│   ├── app.py
+				│   ├── assets
+				│   │   └── sytlesheet.css
+				│   ├── data_cleaning.py
+				│   ├── data_loading.py
+				│   ├── data_processing.py
+				│   ├── features_extraction.py
+				│   ├── requirements.txt
+
+
+
+*	 data - Serialized data.
+
+*	 models - Saved models and will contains weights of an eventual machine learning algorithm.
+
+*	 notebooks - The Ipyhton Notebooks for exploratory analysis and algorithms designing process.
 
 *	 src - All the excutable codes including the app.py file and the requirements.txt file.
 		
-*	 notebooks - The Ipyhton Notebooks for exploratory analysis and algorithms designing process.
 		
-*	 data - Serialized data.
 		
-*	 models - Saved models and will contains weights of an eventual machine learning algorithm.
+		
 
 
+## Set up and Run it
 
-## Run the app 
+Make sure to have pip and python3+ installed in your local machine. 
 
 
+1. From your terminal type this commande line  below to clone the repo. 
 
 
-###### FIRST AND FOREMOST: 
-
-Once you have access to the repository make sure to first open: 
-
-	 __PATH_FILES__.py  
-
-located inside:
-
-	 ../behavox_assignment/src/
+		$ git clone https://bitbucket.org/mtfaye/behavox_assignment.git
 	 
+	
+2. Once cloned, first open the file.
 
-then replace accordingly the absolute paths of your local directories. 
-
-
-
-###### Follow these 6 steps from your terminal to run the app now.
+	 	__PATH_FILES__.py  
 
 
+Located:
 
-     	1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+		├── src
+			├──__PATH_FILES__.py
+
+
+3. Then replace accordingly the absolute paths of your local directories to connect the app with the data. 
+
+
+4. Use these command lines below to create venv inside src folder, activate the venv environment and run the app.
 		
-	    2. cd ../behavox_assignment
+		 $ virtualenv venv
 		
-	    3. cd ../behavox_assignment/src/
+	     $ source venv/bin/activate
 		
-	    4. source venv/bin/activate
+	     $ pip install -r requirements.txt
 		
-	    5. pip install -r requirements.txt
-		
-	    6. python app.py
+	     $ python3 app.py
+
 
 Enjoy!
 
