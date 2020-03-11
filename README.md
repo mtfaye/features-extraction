@@ -91,7 +91,7 @@ Make sure to have pip and python3+ installed in your local machine.
 1. From your terminal type this commande line  below to clone the repo. 
 
 
-	$ git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+		$ git clone https://bitbucket.org/mtfaye/behavox_assignment.git
 	 
 	
 2. Once cloned, first open the file.
