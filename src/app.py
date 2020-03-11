@@ -8,6 +8,7 @@ from features_extraction import extract_features
 
 
 def generate_table(dataframe):
+
     return html.Table(
         # Header
         [html.Tr([html.Th(col) for col in dataframe.columns])] +
@@ -76,7 +77,7 @@ app.layout = html.Div(
                     html.P('Behavox assignment - Developed by Mouhameth T. Faye ', style={'display': 'inline'}),
                     html.A('tahafaye@hotmail.com', href='mailto: tahafaye@hotmail.com')
                 ], className="twelve columns",
-                style={'fontSize': 13, 'padding-top': 18}
+                style={'fontSize': 14, 'padding-top': 18}
             )
         ], className="row")
     ], className='ten columns offset-by-one'

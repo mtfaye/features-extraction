@@ -30,7 +30,6 @@ def extract_features():
     tfidf_transformer = TfidfTransformer()
     tfidf_mat = tfidf_transformer.fit_transform(dt_mat)
 
-
     # Convert sparse matrix to a dense representation and wrap it in a dataFrame
     trigrams = pd.DataFrame(dt_mat.todense(),
                             index=corpus.index,
@@ -52,17 +51,19 @@ def extract_features():
                          id_vars=['index', 'channel_code'],
                          value_name='score').query('score > 0')
 
-
-    # Merge bigrams and tfidf
+    # Merge trigrams and tfidf
     fulldf = (trigrams_long.merge(tfidf_long, on=['index', 'channel_code', 'variable']).set_index('index'))
-
+    fulldf.score = fulldf.score.round(2)
 
     # Filter the 20 highest scores for each channel
     result = fulldf.groupby('channel_code').apply(lambda x: x.nlargest(15, 'count')).reset_index(drop=True)
     result = result.applymap(str)
 
-
     return result
 
+
+# Save result
+with open(outfiles + 'features' + '.pickles', 'wb') as output:
+    pickle.dump(extract_features(), output)
 
 print(extract_features())
