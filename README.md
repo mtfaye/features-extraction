@@ -83,41 +83,41 @@ Used the analytic web framework Dash to build the web app that showcases the res
 		
 
 
-## Run the app 
+## Set up and Run it
+
+Make sure to have pip and python3+ installed in your local machine. 
 
 
+1. From your terminal type this commande line  below to clone the repo. 
 
 
-###### FIRST AND FOREMOST: 
-
-Once you have access to the repository make sure to first open: 
+	$ git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+	 
+	
+2. Once cloned, first open the file.
 
 	 __PATH_FILES__.py  
 
-located inside:
 
-	 ../behavox_assignment/src/
-	 
+Located:
 
-then replace accordingly the absolute paths of your local directories. 
-
-
-
-###### Follow these 6 steps from your terminal to run the app now.
-
-
-
-     	1. git clone https://bitbucket.org/mtfaye/behavox_assignment.git
+	├── src
+        ├──__PATH_FILES__.py
 		
-	    2. cd ../behavox_assignment/src/
+
+3. Then replace accordingly the absolute paths of your local directories to connect the app with the data. 
+
+
+4. Use these command lines below to create venv inside src folder, activate the venv environment and run the app.
 		
-		3. virtualenv venv
+		 $ virtualenv venv
 		
-	    4. source venv/bin/activate
+	     $ source venv/bin/activate
 		
-	    5. pip install -r requirements.txt
+	     $ pip install -r requirements.txt
 		
-	    6. python3 app.py
+	     $ python3 app.py
+
 
 Enjoy!
 
