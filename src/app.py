@@ -8,7 +8,6 @@ from features_extraction import extract_features
 
 
 def generate_table(dataframe):
-
     return html.Table(
         # Header
         [html.Tr([html.Th(col) for col in dataframe.columns])] +
@@ -54,8 +53,8 @@ app.layout = html.Div(
                 each channel, I think these features convey a collusive behavior from the user. What is your thought? 
                 """
             )
-
-        ]),
+        ]
+        ),
 
         html.Div(children=[
             html.P('Select a channel - sms: 1, emails: 2, chats: 3'),

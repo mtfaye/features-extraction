@@ -49,7 +49,3 @@ stop_words = list(stopwords.words())
 for stop_word in stop_words:
     regex_stopword = r"\b" + stop_word + r"\b"
     clean_corpus['Messages'] = clean_corpus['Messages'].str.replace(regex_stopword, '')
-
-
-
-

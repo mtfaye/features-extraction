@@ -31,25 +31,17 @@ def extract_features():
     tfidf_mat = tfidf_transformer.fit_transform(dt_mat)
 
     # Convert sparse matrix to a dense representation and wrap it in a dataFrame
-    trigrams = pd.DataFrame(dt_mat.todense(),
-                            index=corpus.index,
-                            columns=count_vec.get_feature_names())
+    trigrams = pd.DataFrame(dt_mat.todense(), index=corpus.index, columns=count_vec.get_feature_names())
     trigrams['channel_code'] = df.Channel_code
 
-    trigrams_long = (pd.melt(trigrams.reset_index(),
-                             id_vars=['index',
-                                      'channel_code'],
+    trigrams_long = (pd.melt(trigrams.reset_index(), id_vars=['index','channel_code'],
                              value_name='count').query('count > 0').sort_values(['index', 'channel_code']))
 
     # Repeat for tfdif
-    tfidf = pd.DataFrame(tfidf_mat.todense(),
-                         index=df.index,
-                         columns=count_vec.get_feature_names())
+    tfidf = pd.DataFrame(tfidf_mat.todense(), index=df.index, columns=count_vec.get_feature_names())
     tfidf['channel_code'] = df.Channel_code
 
-    tfidf_long = pd.melt(tfidf.reset_index(),
-                         id_vars=['index', 'channel_code'],
-                         value_name='score').query('score > 0')
+    tfidf_long = pd.melt(tfidf.reset_index(), id_vars=['index', 'channel_code'], value_name='score').query('score > 0')
 
     # Merge trigrams and tfidf
     fulldf = (trigrams_long.merge(tfidf_long, on=['index', 'channel_code', 'variable']).set_index('index'))

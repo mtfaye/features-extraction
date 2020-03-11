@@ -1,5 +1,5 @@
 ####################################################################################################
-#          PUT HERE THE ABSOLUTE PATHS FOR DIFFERENT FOLDER OF THE DATASET              #
+#          PUT HERE THE ABSOLUTE PATHS FOR DIFFERENT FOLDER OF THE DATASET
 ###################################################################################################
 
 
@@ -26,7 +26,7 @@ MBOX = '/Users/mouhamethtakhafaye/Desktop/behavox_assignment/data/immutable_inpu
 
 
 ####################################################################################################
-#                    PUT HERE ALL THE SAVED SERIALIZED DATA                                      #
+#                           SERIALIZED DATA
 ####################################################################################################
 
 
@@ -45,7 +45,7 @@ outfiles = '/Users/mouhamethtakhafaye/Desktop/behavox_assignment/data/'
 
 
 ################################################################################################
-#             PATH OF THE FOLDER YOU WANT SAVE THE PICKLES                                     #
+#                                   PICKLES
 ################################################################################################
 
 

@@ -14,8 +14,7 @@ from time import asctime
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 
-# First we are going to convert the raw data folder named Communication Samples to a standardized mbox file format. T
-# The MBOX is a file extension that makes it easy to manipulate eml files.
+# First we are going to convert the raw data folder named Communication Samples to a standardized mbox file format.
 
 # Create a file handle that we'll be writing into...
 mbox = open(MBOX, 'w+')
@@ -48,6 +47,7 @@ for (root, dirs, file_names) in os.walk(communications_samples):
 mbox.close()
 
 # Loading emails (Inbox folder only)
+
 emails_folder = mailbox.mbox(MBOX)
 
 
