@@ -35,39 +35,39 @@ Used the analytic web framework Dash to build the web app that showcases the res
 
 ## Repo content 
 
-			├── README.md
-			├── data
-			│   ├── immutable_input_data.mbox
-			│   ├── raw.json
-			│   ├── raw_corpus.json
-			│   ├── raw_data.json
-			│   └── term_matrix.json
-			├── models
-			│   └── tfidf.pickles
-			├── notebooks
-			│   ├── 1.0-mtf-text_cleaning.ipynb
-			│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
-			│   ├── 1.2-mtf-features_engineering.ipynb
-			│   ├── 1.3-mtf-features_analysis.ipynb
-			│   ├── Pickles
-			│   │   ├── clean_corpus.pickle
-			│   │   ├── df.pickle
-			│   │   ├── raw_corpus.pickle
-			│   │   └── term_matrix.pickle
-			│   └── lda_model.log
-			├── screenshot_webApp.png
-			├── src
-			│   ├──__PATH_FILES__.py
-			│   ├──__init__.py
-			│   ├── app.py
-			│   ├── assets
-			│   │   └── sytlesheet.css
-			│   ├── data_cleaning.py
-			│   ├── data_loading.py
-			│   ├── data_processing.py
-			│   ├── features_extraction.py
-			│   ├── requirements.txt
-			     
+				├── README.md
+				├── data
+				│   ├── immutable_input_data.mbox
+				│   ├── raw.json
+				│   ├── raw_corpus.json
+				│   ├── raw_data.json
+				│   └── term_matrix.json
+				├── models
+				│   └── tfidf.pickles
+				├── notebooks
+				│   ├── 1.0-mtf-text_cleaning.ipynb
+				│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
+				│   ├── 1.2-mtf-features_engineering.ipynb
+				│   ├── 1.3-mtf-features_analysis.ipynb
+				│   ├── Pickles
+				│   │   ├── clean_corpus.pickle
+				│   │   ├── df.pickle
+				│   │   ├── raw_corpus.pickle
+				│   │   └── term_matrix.pickle
+				│   └── lda_model.log
+				├── screenshot_webApp.png
+				├── src
+				│   ├──__PATH_FILES__.py
+				│   ├──__init__.py
+				│   ├── app.py
+				│   ├── assets
+				│   │   └── sytlesheet.css
+				│   ├── data_cleaning.py
+				│   ├── data_loading.py
+				│   ├── data_processing.py
+				│   ├── features_extraction.py
+				│   ├── requirements.txt
+
 
 
 *	 data - Serialized data.
@@ -96,14 +96,14 @@ Make sure to have pip and python3+ installed in your local machine.
 	
 2. Once cloned, first open the file.
 
-	 __PATH_FILES__.py  
+	 	__PATH_FILES__.py  
 
 
 Located:
 
-	├── src
-        ├──__PATH_FILES__.py
-		
+		├── src
+			├──__PATH_FILES__.py
+
 
 3. Then replace accordingly the absolute paths of your local directories to connect the app with the data. 
 
