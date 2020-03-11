@@ -8,7 +8,7 @@ This project is intended to be a walkthrough on the development of a machine lea
 This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document. Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples data. That should be necessary for reaching a full understanding of the project.
 
 
-## Workflow:
+## Workflow
 
 
 #### 	1. Dataset Collection:
