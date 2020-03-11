@@ -32,6 +32,7 @@ Used the analytic web framework Dash to build the web app that showcases the res
 
 
 
+
 ## Repo content 
 
 			├── README.md
@@ -48,7 +49,6 @@ Used the analytic web framework Dash to build the web app that showcases the res
 			│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
 			│   ├── 1.2-mtf-features_engineering.ipynb
 			│   ├── 1.3-mtf-features_analysis.ipynb
-			│   ├── 2.0.mtf-emotion-detection.ipynb
 			│   ├── Pickles
 			│   │   ├── clean_corpus.pickle
 			│   │   ├── df.pickle
@@ -57,6 +57,8 @@ Used the analytic web framework Dash to build the web app that showcases the res
 			│   └── lda_model.log
 			├── screenshot_webApp.png
 			├── src
+			│   ├──__PATH_FILES__.py
+			│   ├──__init__.py
 			│   ├── app.py
 			│   ├── assets
 			│   │   └── sytlesheet.css
@@ -65,16 +67,20 @@ Used the analytic web framework Dash to build the web app that showcases the res
 			│   ├── data_processing.py
 			│   ├── features_extraction.py
 			│   ├── requirements.txt
+			     
 
+
+*	 data - Serialized data.
+
+*	 models - Saved models and will contains weights of an eventual machine learning algorithm.
+
+*	 notebooks - The Ipyhton Notebooks for exploratory analysis and algorithms designing process.
 
 *	 src - All the excutable codes including the app.py file and the requirements.txt file.
 		
-*	 notebooks - The Ipyhton Notebooks for exploratory analysis and algorithms designing process.
 		
-*	 data - Serialized data.
 		
-*	 models - Saved models and will contains weights of an eventual machine learning algorithm.
-
+		
 
 
 ## Run the app 
