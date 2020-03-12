@@ -48,7 +48,6 @@ Used the analytic web framework Dash to build the web app that showcases the res
 				│   ├── 1.0-mtf-text_cleaning.ipynb
 				│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
 				│   ├── 1.2-mtf-features_engineering.ipynb
-				│   ├── 1.3-mtf-features_analysis.ipynb
 				│   ├── Pickles
 				│   │   ├── clean_corpus.pickle
 				│   │   ├── df.pickle
