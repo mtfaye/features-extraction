@@ -109,7 +109,7 @@ Located:
 
 4. Use these command lines below to create venv inside src folder, activate the venv environment and run the app.
 		
-		 $ python3 -m venv
+		 $ python3 -m venv venv
 		
 	     $ source venv/bin/activate
 		
