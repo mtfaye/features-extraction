@@ -45,9 +45,9 @@ def extract_features():
 
     # Merge trigrams and tfidf
     fulldf = (trigrams_long.merge(tfidf_long, on=['index', 'channel_code', 'variable']).set_index('index'))
-    fulldf.score = fulldf.score.round(2)
+    fulldf.score = fulldf.score.round(3)
 
-    # Filter the 20 highest scores for each channel
+    # Filter the 15 highest scores for each channel
     result = fulldf.groupby('channel_code').apply(lambda x: x.nlargest(15, 'count')).reset_index(drop=True)
     result = result.applymap(str)
 
