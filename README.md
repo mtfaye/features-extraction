@@ -96,7 +96,7 @@ Make sure to have [pip](https://pip.pypa.io/en/stable/) and [Python3+](https://w
 
 ## Set up and Run it
 
-From the comnand line Linux and macOs:
+From comnand line:
 
 1. Clone repo  ``` $ git clone https://bitbucket.org/mtfaye/behavox_assignment.git ```
 
