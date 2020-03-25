@@ -46,11 +46,8 @@ app.layout = html.Div(
                 , style={'textAlign': 'left'}),
             html.P(
 
-                """This application extracts text across three different channels of communication; emails, 
-                sms and chats. It then performs a statistical modeling technique to find interesting subject. The 
-                table below shows the result. It contains the 15 most important features for each channel. At this 
-                point it becomes our job as a human to interpret the result.  
-                """
+                """ This application extracts text across three different channels of communication of one user, P-Allen. It then performs a statistical modeling technique to find interesting features. The 
+                table below shows the result and it contains the 15 most important features for each channel.   """
             )
         ]
         ),
