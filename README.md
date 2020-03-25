@@ -23,10 +23,9 @@ For the exploratory analysis, I took a look at the most common words and then cr
 ![Words Cloud](src/assets/word_cloud.png)
 
 
-#### 	3. Feature Engineering - TF-IDF Vector: 
+#### 	3. Feature Engineering - TF-IDF Vectorizer: 
 
 Used the bag of words analysis approach to tokenise the data and create trigrams.
-
 Why TFIDF vectorizer? I have noticed lot of repeated words in the emails folder for instance words like Hi, Thanks and How are you are very frequent. The goal is to scale down the impact of tokens that occur very frequently in our corpus because they  affects negatively our analysis. The tf-idf algorihtm is very efficient in reducing noise. 
 
 #### 	4. App Creation:
