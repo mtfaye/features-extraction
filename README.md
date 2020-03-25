@@ -1,9 +1,6 @@
 # Features Calculations App 
 
-This project is intended to be a walkthrough on the development of a tool (web application) that gathers data from several channel of communications such as emails, chats and text messages and shows a summary of interesting topics that are being treated across those different channels.
-
-This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document.
-
+This project is intended to be a walkthrough on the development of a tool (web application) that gathers data from several channel of communications and counts the value of a chosen feature of interest across the different channels. This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document.
 Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples provided.
 
 
@@ -27,6 +24,7 @@ For the exploratory analysis, I took a look at the most common words and then cr
 
 
 #### 	3. Feature Engineering - TF-IDF Vector: 
+
 Used the bag of words analysis approach to tokenise the data and create trigrams.
 
 Why TFIDF vectorizer? I have noticed lot of repeated words in the emails folder for instance words like Hi, Thanks and How are you are very frequent. The goal is to scale down the impact of tokens that occur very frequently in our corpus and that affect negatively our analysis.  
