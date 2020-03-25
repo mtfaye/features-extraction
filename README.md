@@ -38,6 +38,7 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 
 ## Repo content 
 
+	├── .gitignore
 	├── README.md
 	│  
 	├── data
@@ -60,7 +61,6 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 	│   │   ├── raw_corpus.pickle
 	│   │   └── term_matrix.pickle
 	│   └── lda_model.log
-	│  
 	│  
 	├── src
 	│   ├──__PATH_FILES__.py
