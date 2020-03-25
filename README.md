@@ -1,7 +1,6 @@
 # Features Calculations App 
-
 This project is intended to be a walkthrough on the development of a tool (web application) that gathers data from several channel of communications and counts the value of a chosen feature of interest across the different channels. This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document.
-For this exercise, I was given 3 choices of features to study: Stress, Closeness and Collusion Behaviour. I decided to go with Collusion Behaviour. Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples provided.
+For this exercise, I was given 3 choices of features to study: Stress, Closeness and Collusion Behaviour. I decided to go with Collusion Behaviour. Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples.
 
 
 ## Workflow
@@ -15,6 +14,7 @@ To make it simple and save time on my preprocessing stage, I only considered col
 
 The emails folder has more files than the sms, chats, bbg and papota all combined together. There is a huge imbalance in term of potential of information to retrieve across items.
 
+
 #### 	2. Preprocessing and Exploratory Data Analysis: 
 The preprocessing and cleaning stage was straight forward. I applied some text cleaning techniques such as removing punctuation, multilanguage stop words removal, convert some characters to lowcase etc. The challenge encoutered on this stage was when removing the chinese and hindu characters as they are not supported by the nltk librairies. 
 
@@ -24,9 +24,9 @@ For the exploratory analysis, I took a look at the most common words and then cr
 
 
 #### 	3. Feature Engineering - TF-IDF Vectorizer: 
-
 Used the bag of words analysis approach to tokenise the data and create trigrams.
 Why TFIDF vectorizer? I have noticed lot of repeated words in the emails folder for instance words like Hi, Thanks and How are you are very frequent. The goal is to scale down the impact of tokens that occur very frequently in our corpus because they  affects negatively our analysis. The tf-idf algorihtm is very efficient in reducing noise. 
+
 
 #### 	4. App Creation:
 Created the web app using the framework [Dash](https://plotly.com/dash/). 
@@ -61,8 +61,6 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 	│   │   └── term_matrix.pickle
 	│   └── lda_model.log
 	│  
-	│  
-	├── screenshot_webApp.png
 	│  
 	├── src
 	│   ├──__PATH_FILES__.py
@@ -117,6 +115,8 @@ From the comnand line Linux and macOs:
 5. Run the app now.
 		
 	     $ python3 app.py
+
+
 
 
 
