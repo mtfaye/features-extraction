@@ -51,17 +51,6 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 	├── models
 	│   └── tfidf.pickles
 	│  
-	├── notebooks
-	│   ├── 1.0-mtf-text_cleaning.ipynb
-	│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
-	│   ├── 1.2-mtf-features_engineering.ipynb
-	│   ├── Pickles
-	│   │   ├── clean_corpus.pickle
-	│   │   ├── df.pickle
-	│   │   ├── raw_corpus.pickle
-	│   │   └── term_matrix.pickle
-	│   └── lda_model.log
-	│  
 	├── src
 	│   ├──__PATH_FILES__.py
 	│   ├──__init__.py
@@ -79,8 +68,6 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 *	 data - Serialized data.
 
 *	 models - Saved tf-ifdf parameters.
-
-*	 notebooks - The Ipyhton notebooks for exploratory analysis and algorithms designing process.
 
 *	 src - The excutable codes including the requirements.txt file.
 		
