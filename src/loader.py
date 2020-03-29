@@ -13,17 +13,13 @@ def combine(sms, chats, inbox):
     return {'SMS': sms, 'CHATS': chats, 'EMAILS': inbox}
 
 
-class Loader:
+class Loader(object):
     """Scrapes the body of messages for each folder."""
 
     def __init__(self, sms_folder, chats_folder, inbox_folder):
         self.sms_folder = sms_folder
         self.chats_folder = chats_folder
         self.inbox_folder = inbox_folder
-
-    def __str__(self):
-        return str(self.__class__) + '\n' + '\n'.join(
-            ('{} = {}'.format(item, self.__dict__[item]) for item in self.__dict__))
 
     def sms(self):
         """Scrapes sms and stores in a list."""
@@ -72,4 +68,3 @@ class Loader:
 
 
 loader = Loader(sms_folder, chats_folder, inbox_folder)
-print(loader)

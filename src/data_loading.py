@@ -6,7 +6,6 @@ from __PATH_FILES__ import communications_samples, MBOX, sms_folder, chats_folde
 
 import os
 import re
-import json
 import email
 import mailbox
 import pandas as pd

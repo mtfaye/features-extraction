@@ -11,12 +11,10 @@ mbox = open(MBOX, 'w+')
 
 # Walk the directories and process all folders
 for (root, dirs, file_names) in os.walk(communications_samples):
-
     if root.split(os.sep)[-1].lower() != 'inbox':
         continue
 
     # Process each message in 'inbox'.
-
     for file_name in file_names:
         file_path = os.path.join(root, file_name)
         message_text = open(file_path, errors='ignore').read()
