@@ -1,6 +1,6 @@
 # Features Calculation App 
 This project is intended to be a walkthrough on the development of a tool (web application) that gathers data from several channel of communications and counts the value of a chosen feature of interest across the different channels. This is achieved with a statistical modeling technique that is able to convert text to numeric vectors in order to determines how important a word or a combination of words are by looking at how frequently they appear in a document.
-For this exercise, I was given 3 choices of features to study: Stress, Closeness and Collusion Behaviour. I decided to go with Collusion Behaviour. Please take the time to go through the notebooks as it contains in more details the explaination of my approach and the techniques used to extract information from the communication samples.
+For this exercise, I was given 3 choices of features to study: Stress, Closeness and Collusion Behaviour. I decided to go with Collusion Behaviour. 
 
 
 ## Workflow
@@ -51,17 +51,6 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 	├── models
 	│   └── tfidf.pickles
 	│  
-	├── notebooks
-	│   ├── 1.0-mtf-text_cleaning.ipynb
-	│   ├── 1.1-mtf-initial-exploratory_analysis.ipynb
-	│   ├── 1.2-mtf-features_engineering.ipynb
-	│   ├── Pickles
-	│   │   ├── clean_corpus.pickle
-	│   │   ├── df.pickle
-	│   │   ├── raw_corpus.pickle
-	│   │   └── term_matrix.pickle
-	│   └── lda_model.log
-	│  
 	├── src
 	│   ├──__PATH_FILES__.py
 	│   ├──__init__.py
@@ -79,8 +68,6 @@ Created the web app using the framework [Dash](https://plotly.com/dash/).
 *	 data - Serialized data.
 
 *	 models - Saved tf-ifdf parameters.
-
-*	 notebooks - The Ipyhton notebooks for exploratory analysis and algorithms designing process.
 
 *	 src - The excutable codes including the requirements.txt file.
 		
