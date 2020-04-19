@@ -28,11 +28,6 @@ Why TFIDF vectorizer? The goal is to scale down the impact of tokens that occur 
 #### 	4. App Creation:
 Created the web app using the framework [Dash](https://plotly.com/dash/). 
 
-![Words Cloud](src/assets/screenshot_app.png)
-
-
-
-
 ## Repo content 
 
 	├── .gitignore
