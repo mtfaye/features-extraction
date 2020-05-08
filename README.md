@@ -77,9 +77,9 @@ Make sure to have [pip](https://pip.pypa.io/en/stable/) and [Python3+](https://w
 
 From comnand line:
 
-1. Clone repo  ``` $ git clone https://bitbucket.org/mtfaye/behavox_assignment.git ```
+1. Clone repo  ``` $ git clone https://github.com/mtfaye/features-extraction.git ```
 
-2. Change directory ``` $ cd ../behavox_assignment/src/ ```
+2. Change directory ``` $ cd ../features-extraction/src/ ```
 	  
 3. Open file ``` __PATH_FILES__.py ```  and replace accordingly the absolute paths to connect the app with the data. 
 
