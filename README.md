@@ -100,6 +100,4 @@ From comnand line:
 
 
 
-## Who do I talk to? ###
-
 * @author: Mouhameth T. Faye - tahafaye@hotmail.com
